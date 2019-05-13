@@ -46,7 +46,8 @@ table {
 
 body {
   font-family: "Roboto Slab";
-  color: #222;
+  line-height: 1.5;
+  color: #777;
 }
 
 body a {
@@ -55,10 +56,35 @@ body a {
 
 body h1 {
   font-size: 72px;
+  margin: 15px auto;
+}
+
+@media (max-width: 992px) {
+  body h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  body h1 {
+    font-size: 32px;
+  }
 }
 
 body h2, body h3 {
   font-size: 36px;
+}
+
+@media (max-width: 992px) {
+  body h2, body h3 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  body h2, body h3 {
+    font-size: 24px;
+  }
 }
 
 body h4 {
@@ -67,6 +93,10 @@ body h4 {
 
 body h5 {
   font-size: 16px;
+}
+
+body h1, body h2, body h3, body h4, body h5 {
+  color: #222;
 }
 
 body h1, body h2 {
@@ -87,20 +117,47 @@ body h3, body h5 {
 body nav {
   font-family: "Montserrat";
   text-transform: uppercase;
-  position: fixed;
+  position: absolute;
   width: 100%;
   top: 40px;
   z-index: 99;
 }
 
-body nav li {
+@media (max-width: 600px) {
+  body nav {
+    top: 15px;
+  }
+}
+
+body nav .logo a {
+  display: block;
+  padding: 15px;
+}
+
+@media (max-width: 600px) {
+  body nav .menu {
+    padding: 0 10px;
+  }
+}
+
+body nav .menu li {
   display: inline-block;
 }
 
-body nav li a {
+body nav .menu li a {
   color: #fff;
   display: block;
   padding: 15px 20px;
+}
+
+@media (max-width: 767px) {
+  body nav .menu li a {
+    font-size: 0;
+    padding: 10px;
+  }
+  body nav .menu li a:first-letter {
+    font-size: 20px;
+  }
 }
 
 body header {
@@ -111,6 +168,10 @@ body header {
   background-size: cover;
   background-position: 50% 50%;
   position: relative;
+  color: #fff;
+}
+
+body header h1, body header h2, body header h3, body header h4, body header h5 {
   color: #fff;
 }
 
@@ -137,6 +198,10 @@ body header, body section {
   padding: 100px 20px;
 }
 
+body footer {
+  padding: 15px 40px;
+}
+
 .flex {
   display: -ms-flexbox;
   display: flex;
@@ -152,10 +217,28 @@ body header, body section {
       justify-content: center;
 }
 
+.flex-center-y {
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+@media (max-width: 767px) {
+  .flex-center-y {
+    -ms-flex-pack: center;
+        justify-content: center;
+    text-align: center;
+  }
+}
+
 .flex-center-all {
   -ms-flex-direction: column;
       flex-direction: column;
   text-align: center;
+}
+
+.col-md-4 {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .h-100 {
@@ -179,5 +262,78 @@ body header, body section {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  margin-top: 10px;
+}
+
+.services .icon {
+  margin: 15px;
+  display: inline-block;
+}
+
+.portfolio {
+  background: #f7f7f7;
+}
+
+.portfolio .col-md-4 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+@media (max-width: 992px) {
+  .portfolio .col-md-4 {
+    -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio .col-md-4 {
+    -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.portfolio .col-md-4 .img-wrapper {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.img-wrapper {
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.desc {
+  padding: 20px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.inline > * {
+  display: inline-block;
+}
+
+.center {
+  text-align: center;
+}
+
+.icon {
+  display: block;
+  padding: 0 3px;
+}
+
+.title {
+  margin-bottom: 25px;
 }
 /*# sourceMappingURL=style.css.map */

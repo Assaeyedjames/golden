@@ -1,4 +1,17 @@
 $primary: #222;
 $secondary: #fff;
+$text: #777;
 $one: #fed136;
 $two: #f7f7f7;
+
+@mixin breakpoint($point) {
+  @if $point == d {
+    @media (max-width: 992px) { @content ; }
+  }
+  @else if $point == t {
+    @media (max-width: 767px) { @content ; }
+  }
+  @else if $point == ph {
+    @media (max-width: 600px) { @content ; }
+  }
+}
